@@ -3,7 +3,7 @@ import tensorflow as tf
 
 
 class Optimizer():
-    """Applies model and attention mechannism.
+    """Applies PU-learning.
        From the paper:
        Zeng X, Zhu S, Lu W, Liu Z, Huang J, Zhou Y, Fang J, Huang Y, Guo H, Li L, Trapp BD, Nussinov R, Eng C, Loscalzo
        J, Cheng F. Target identification among known drugs by deep learning from heterogeneous networks. Chem Sci. 2020
