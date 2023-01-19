@@ -8,7 +8,7 @@ from sklearn.linear_model import ElasticNet
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 
-"""Applies model and attention mechannism.
+"""Applies methods.
    From the paper:
    Yu Z, Huang F, Zhao X, Xiao W, Zhang W."Predicting drug-disease associations through layer attention graph
    convolutional network." Brief Bioinform. 2021 Jul 20; 22(4): bbaa243.
