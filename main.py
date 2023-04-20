@@ -50,14 +50,14 @@ def predict(train_drug_lnc_matrix, drug_matrix, lnc_matrix, seed, epochs, emb_di
         'adjdp': tf.placeholder_with_default(0., shape=())
     }
     model = GCNModel(placeholders, num_features, emb_dim,
-                     features_nonzero, adj_nonzero, train_drug_lnc_matrix.shape[0], low_rank,name='LAGCN')
+                     features_nonzero, adj_nonzero, train_drug_lnc_matrix.shape[0], low_rank,name='DLGCN')
     with tf.name_scope('optimizer'):
         opt = Optimizer(
             preds=model.reconstructions,
             labels=tf.reshape(tf.sparse_tensor_to_dense(
                 placeholders['adj_orig'], validate_indices=False), [-1]),
             model=model,
-            lr=lr, num_u=train_drug_lnc_matrix.shape[0], num_v=train_drug_lnc_matrix.shape[1], association_nam=association_nam)
+            lr=lr, num_u=train_drug_lnc_matrix.shape[0], num_v=train_drug_lnc_matrix.shape[1], pos=association_nam)
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
 
